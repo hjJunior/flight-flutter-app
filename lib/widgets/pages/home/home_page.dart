@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:mvp/widgets/pages/home/custom_app_bar.dart';
-import 'package:mvp/widgets/pages/home/custom_tab_bar.dart';
-import 'package:mvp/widgets/row/flight_tile.dart';
+import 'custom_fab.dart';
+import 'home_main_content.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -42,36 +42,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: CustomFab(),
       body: Stack(
         fit: StackFit.expand,
         overflow: Overflow.visible,
         children: <Widget>[
           CustomAppBar(planeRotateAnimation: _planeRotateAnimation),
-          Positioned.fill(
-            top: 180,
-            child: Padding(
-              padding: EdgeInsets.all(20),
-              child: Card(
-                elevation: 2,
-                child: Column(
-                  children: <Widget>[
-                    CustomTabBar(),
-                    Expanded(
-                      child: CustomScrollView(
-                        slivers: <Widget>[
-                          SliverList(
-                              delegate: SliverChildBuilderDelegate(
-                                  (_, index) => FlightTile()
-                              )
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          )
+          HomeMainContent()
         ],
       ),
     );

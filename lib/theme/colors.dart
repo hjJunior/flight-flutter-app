@@ -13,3 +13,10 @@ final headerLinearGradient = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight
 );
+
+final fabLinearGradient = LinearGradient(
+    colors: [
+      Color(0xFF3cb3f1),
+      Color(0xFF8c81f7),
+    ],
+);
