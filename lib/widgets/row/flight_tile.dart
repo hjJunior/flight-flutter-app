@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp/model/home_model.dart';
 import 'package:mvp/theme/colors.dart';
 import 'package:mvp/widgets/utils/airplane_icon.dart';
 import 'package:mvp/widgets/utils/circle.dart';
@@ -51,8 +52,10 @@ class _FlightTileState extends State<FlightTile> with SingleTickerProviderStateM
   void toggleOpen() {
    if (_containerAnimController.status == AnimationStatus.completed) {
      _containerAnimController.reverse();
+     HomeModel.of(context).decrementOpenFlightTickets();
    } else {
      _containerAnimController.forward();
+     HomeModel.of(context).incrementOpenFlightTickets();
    }
   }
 

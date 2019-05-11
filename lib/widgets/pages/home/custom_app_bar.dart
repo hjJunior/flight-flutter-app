@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mvp/theme/colors.dart';
+import 'package:mvp/widgets/utils/airplane_icon.dart';
+import 'package:mvp/widgets/utils/circle.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
     Key key,
-    @required Animation<double> planeRotateAnimation,
-  }) : _planeRotateAnimation = planeRotateAnimation, super(key: key);
-
-  final Animation<double> _planeRotateAnimation;
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,82 +44,40 @@ class CustomAppBar extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Container(
-                      width: 3,
-                      height: 3,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(50)
-                      ),
+                    Circle(
+                      color: Colors.white,
+                      radius: 3.0,
                     ),
-                    SizedBox(
-                      width: 5,
+                    SizedBox(width: 5,),
+                    Circle(
+                      color: Colors.white,
+                      radius: 6.0,
                     ),
-                    Container(
-                      width: 6,
-                      height: 6,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(50)
-                      ),
+                    SizedBox(width: 5,),
+                    Circle(
+                      color: Colors.white,
+                      radius: 8.0,
                     ),
-                    SizedBox(
-                      width: 5,
+                    SizedBox(width: 5,),
+                    AirplaneIcon(
+                      color: Colors.white,
+                      size: 32,
+                      degress: 90,
                     ),
-                    Container(
-                      width: 8,
-                      height: 8,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(50)
-                      ),
+                    SizedBox(width: 5,),
+                    Circle(
+                      color: Colors.white,
+                      radius: 8.0,
                     ),
-                    SizedBox(
-                      width: 5,
+                    SizedBox(width: 5,),
+                    Circle(
+                      color: Colors.white,
+                      radius: 6.0,
                     ),
-                    AnimatedBuilder(
-                      animation: _planeRotateAnimation,
-                      builder: (_, __) => Transform.rotate(
-                        angle: _planeRotateAnimation.value,
-                        child: Icon(
-                          Icons.airplanemode_active,
-                          color: Colors.white,
-                          size: 32,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Container(
-                      width: 8,
-                      height: 8,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(50)
-                      ),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Container(
-                      width: 6,
-                      height: 6,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(50)
-                      ),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Container(
-                      width: 3,
-                      height: 3,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(50)
-                      ),
+                    SizedBox(width: 5,),
+                    Circle(
+                      color: Colors.white,
+                      radius: 3.0,
                     ),
                   ],
                 ),
